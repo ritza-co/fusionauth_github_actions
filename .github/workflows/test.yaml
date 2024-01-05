@@ -42,6 +42,3 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --project=chromium
         working-directory: ./app
-
-      - name: Check Playwright test result
-        run: echo $?

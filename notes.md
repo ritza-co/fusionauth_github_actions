@@ -1,34 +1,3 @@
-- [x] choose tester:
-  - selenium is java based
-  - puppeteer is chrome only
-  - cypress is complex and has a gui
-  - playwright looks good - js. cross browser. headless.
-- [x] make article outline
-- [x] make test repo
-- [ ] run an lxc container with demo rust app, fa, and test login with gui tester (selenium, playwright, the thing i used for ekaya)
-- [ ] do the same thing in a github action
-- [ ] learn about github actions marketplace
-- [ ] decide what the marketplace action should do (all 3 os?)
-- [ ] write and deploy the action
-- [ ] write the article
-
-## Introduction
-
-Things users want to automate deployment of:
-- When pushing to main branch, deploy their app and FusionAuth to AWS, Azure, Digital Ocean, or a custom server.
-- Test that login works through terminal.
-- Test login works from their app. A web page GUI tester.
-- Upgrade FusionAuth to a new version.
-- Leave FusionAuth untouched on server if no changes have been made to kickstart files or FusionAuth version.
-- Set up CD functionality through a GitHub marketplace action.
-
-- Testing login works should be done in the action. The final test of logging to the deployed app can be done by hand when checking the site is actually up.
-
-## How to upgrade FusionAuth
-
-https://fusionauth.io/docs/get-started/download-and-install/docker#upgrading
-https://hub.docker.com/r/fusionauth/fusionauth-app/tags
-
 ## Did
 
 ```bash
