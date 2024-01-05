@@ -1,5 +1,4 @@
-name: Playwright Tests
-
+name: Test FusionAuth login
 on:
   push:
     branches:
@@ -26,24 +25,24 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Start FusionAuth
+      - name: Start FusionAuth in Docker
         run: docker-compose up -d # -d in background
 
-      - name: Install dependencies
+      - name: Install npm dependencies
         run: |
           npm install
           npx playwright install-deps
-        working-directory: ./complete-application
+        working-directory: ./app
 
-      - name: Start Web Application
+      - name: Start app
         run: npm run start & # & in background
-        working-directory: ./complete-application
+        working-directory: ./app
 
-      - name: Run Playwright Tests
+      - name: Run Playwright tests
         run: |
           sleep 30
           npx playwright test --project=chromium
-        working-directory: ./complete-application
+        working-directory: ./app
 
-      - name: Check Playwright Test Result
+      - name: Check Playwright test result
         run: echo $?
