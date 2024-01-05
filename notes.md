@@ -49,6 +49,9 @@ Initializing project in '.'
 npx playwright install-deps;
 ```
 
+- make .gtihub/workflows/test.yaml
+- secrets instead of .env
+
 ## How To Run
 
 In a terminal run the following to start FusionAuth.
