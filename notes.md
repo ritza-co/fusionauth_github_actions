@@ -54,7 +54,7 @@ npx playwright install-deps;
 In a terminal run the following to start FusionAuth.
 
 ```shell
-docker-compose up
+docker-compose up;
 ```
 
 In another terminal start the app.
@@ -69,7 +69,8 @@ In another terminal test the app.
 
 ```shell
 clear; npx playwright test --project=chromium;
-clear; npx playwright test --project=chromium --ui; // to watch the test and see where it fails
+echo $?; # 0 if success
+# clear; npx playwright test --project=chromium --ui; # to watch the test and see where it fails
 ```
 
 Browse to the app at http://localhost:3000.
