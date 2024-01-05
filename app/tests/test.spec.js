@@ -13,5 +13,5 @@ test('Test login', async ({ page }) => {
   expect(page.url()).toBe('http://localhost:3000/account');
   await page.waitForSelector('p.header-email');
   const emailText = await page.textContent('p.header-email');
-  expect(emailText).toBe('richardc@example.com');
+  expect(emailText).toBe('richard@example.com');
 });
