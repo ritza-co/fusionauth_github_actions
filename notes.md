@@ -69,6 +69,7 @@ In another terminal test the app.
 
 ```shell
 clear; npx playwright test --project=chromium;
+clear; npx playwright test --project=chromium --ui; // to watch the test and see where it fails
 ```
 
 Browse to the app at http://localhost:3000.
