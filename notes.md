@@ -47,7 +47,6 @@ Initializing project in '.'
 ✔ Install Playwright operating system dependencies (requires sudo / root - can be done manually via 'sudo npx playwright install-deps')? (y/N) · false
 
 npx playwright install-deps;
-npx playwright test --project=chromium;
 ```
 
 ## How To Run
@@ -69,7 +68,7 @@ npm run start
 In another terminal test the app.
 
 ```shell
-npx playwright test test.js
+clear; npx playwright test --project=chromium;
 ```
 
 Browse to the app at http://localhost:3000.
