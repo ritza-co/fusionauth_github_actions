@@ -39,7 +39,7 @@ services:
       - search_data:/usr/share/elasticsearch/data
 
   fusionauth:
-    image: fusionauth/fusionauth-app:latest
+    image: fusionauth/fusionauth-app:1.48.3 # 1.42.1 - 1.48.3 - latest
     depends_on:
       db:
         condition: service_healthy
