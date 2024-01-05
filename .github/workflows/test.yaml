@@ -32,6 +32,7 @@ jobs:
         run: |
           npm install
           npx playwright install-deps
+          npx playwright install
         working-directory: ./app
 
       - name: Start app
@@ -40,7 +41,7 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          sleep 30
+          # sleep 30 # not necessary, action waits for docker and runs fast
           npx playwright test --project=chromium
         working-directory: ./app
 
