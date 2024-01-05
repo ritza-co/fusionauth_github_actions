@@ -2,7 +2,7 @@ name: Test FusionAuth login
 on:
   push:
     branches:
-      - main
+      - main_RENAME_THIS_TO_ENABLE_TEST
 
 jobs:
   run-tests:
@@ -40,9 +40,7 @@ jobs:
         working-directory: ./app
 
       - name: Run Playwright tests
-        run: |
-          # sleep 30 # not necessary, action waits for docker and runs fast
-          npx playwright test --project=chromium
+        run: npx playwright test --project=chromium
         working-directory: ./app
 
       - name: Check Playwright test result
