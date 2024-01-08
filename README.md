@@ -1,48 +1,38 @@
-## Did
+## Description
+
+This sample application demonstrates how to use a GitHub Action to run Playwright tests against a simple Node.js Express.js application that logs in with FusionAuth.
+
+It's part of the article available at: https://fusionauth.io/docs/get-started/run-in-the-cloud/github-actions.
+
+## Run the app
+
+To run this application you will need Node.js and Docker installed. In a terminal run the code below.
 
 ```bash
-npm init playwright;
-
-app$ npm init playwright
-Need to install the following packages:
-create-playwright@1.17.131
-Ok to proceed? (y) y
-Getting started with writing end-to-end tests with Playwright:
-Initializing project in '.'
-✔ Do you want to use TypeScript or JavaScript? · JavaScript
-✔ Where to put your end-to-end tests? · tests
-✔ Add a GitHub Actions workflow? (y/N) · true
-✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
-✔ Install Playwright operating system dependencies (requires sudo / root - can be done manually via 'sudo npx playwright install-deps')? (y/N) · false
-
-npx playwright install-deps;
+git clone https://github.com/ritza-co/fusionauth_github_actions.git
+docker compose up
 ```
 
-- make .gtihub/workflows/test.yaml
-- secrets instead of .env
+In another terminal run the code below.
 
-## How To Run
-
-In a terminal run the following to start FusionAuth.
-
-```shell
-docker-compose up;
-```
-
-In another terminal start the app.
-
-```shell
-cd complete-application
+```bash
+cd app
 npm install
 npm run start
 ```
 
+Browse to the app at http://localhost:3000 and log in with `admin@example.com` and `password`.
+
 In another terminal test the app.
 
 ```shell
-clear; npx playwright test --project=chromium;
-echo $?; # 0 if success
-# clear; npx playwright test --project=chromium --ui; # to watch the test and see where it fails
+cd app
+npx playwright install-deps
+npx playwright install
+npx playwright test --project=chromium;
+# npx playwright test --project=chromium --ui; # to watch the test and see where it fails
 ```
 
-Browse to the app at http://localhost:3000.
+## Run the tests in a GitHub action
+
+To run these tests in a GitHub action, fork this repository, change the branch in `.github/workflows/test.yaml` from `main_RENAME_THIS_TO_ENABLE_TEST` to `main`. Commit and push. The action will start running in the Actions tab in the repository site.
