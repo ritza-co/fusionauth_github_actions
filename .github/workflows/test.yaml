@@ -2,7 +2,7 @@ name: Test FusionAuth login
 on:
   push:
     branches:
-      - main_RENAME_THIS_TO_ENABLE_TEST
+      - main
 
 jobs:
   run-tests:
@@ -13,7 +13,6 @@ jobs:
         image: docker:19.03.12
         options: --privileged # container has full access to host
         ports:
-          - 3000:3000
           - 9011:9011
 
     steps:
