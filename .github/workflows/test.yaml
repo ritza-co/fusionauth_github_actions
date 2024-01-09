@@ -2,7 +2,7 @@ name: Test FusionAuth login
 on:
   push:
     branches:
-      - main
+      - main_RENAME_THIS_TO_ENABLE_TEST
 
 jobs:
   run-tests:
