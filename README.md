@@ -9,7 +9,7 @@ It's part of the article available at: https://fusionauth.io/docs/get-started/ru
 To run this application you will need Node.js and Docker installed. In a terminal run the code below.
 
 ```bash
-git clone https://github.com/ritza-co/fusionauth_github_actions.git
+git clone https://github.com/FusionAuth/fusionauth_github_actions.git
 docker compose up
 ```
 
